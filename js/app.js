@@ -3,11 +3,13 @@ const slides = ['noseslide', 'tailslide', 'boardslide', 'lipslide', 'bluntslide'
 const stance = ['', '', '', 'switch', 'fakie', 'nollie'];
 const direction = ['frontside', 'backside'];
 const tricks = ['kickflip', 'heelflip', 'shoveit', 'fsshoveit', '', '', '', ''];
-const rotation = ['fs180', 'bs180', 'Pop out','Pop over','',''];
+const rotation = ['fs180', 'bs180', 'Pop out','Pop over','to fakie','', '', ''];
 const trickDisplay = document.querySelector('#trick');
 const button = document.querySelector('button');
 const sound = document.querySelector('audio');
 button.addEventListener('click', generateTrick);
+
+const choose = tricks => tricks[Math.floor(Math.random() * tricks.length)];
 
 function generateTrick() {
   let railtrick;
@@ -19,5 +21,3 @@ function generateTrick() {
     sound.play();
   }
 }
-
-const choose = tricks => tricks[Math.floor(Math.random() * tricks.length)];
